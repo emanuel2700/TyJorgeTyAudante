@@ -42,15 +42,15 @@ int main() {
         }
     }
     ll INF = 1e18;
-    ll ma = -1;
-    for (int i = i; i < n + 1; i += 2) {
+    ll ma = pre_on[n + 1];
+    for (int i = 1; i < n + 1; i += 2) {
         if (v[i] - v[i - 1] > 1) {
             ll add = v[i] - 1;
-            ma = max(ma, pre_on[i] - 1 + pre_of[n + 2] - pre_of[i]);
+            ma = max(ma, pre_on[i] - 1 + pre_of[n + 1] - pre_of[i]);
         }
         if (v[i + 1] - v[i] > 1) {
             ll add = v[i] + 1;
-            ma = max(ma, pre_on[i] + pre_of[n + 2] - pre_of[i] - 1);
+            ma = max(ma, pre_on[i] + pre_of[n + 1] - pre_of[i] - 1);
         }
     }
     cout << ma << endl;
